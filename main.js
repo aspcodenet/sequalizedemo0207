@@ -4,6 +4,11 @@ const rl = readline.createInterface({ input, output });
 const { sequelize, Employee } = require('./models')
 const migrationhelper = require('./migrationhelper')
 
+// Ny kolumn
+
+// UPDATE one !
+
+// async/await
 
 
 
@@ -24,6 +29,7 @@ async function createNew(){
 
     await Employee.create({name:name, 
         birthDate:'1972-08-03',
+        employedAt:'2008-05-28',
         hourlySalary:   parseInt(salary)})
 
 }
