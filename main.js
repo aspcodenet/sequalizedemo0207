@@ -38,6 +38,17 @@ async function createNew(){
 
 async function main(){
     await migrationhelper.migrate()
+
+    // update employees set name='Lunch' where id=1
+    //select * from Employees where id=1
+    const theEmployee = await Employee.findOne({
+        where: { id:1 }
+      })
+
+      theEmployee.name = 'Lunch' //
+      await theEmployee.save()
+
+
     while(true){    
         console.log('1. Lista alla employees')
         console.log('2. Skapa employee')
