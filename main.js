@@ -8,6 +8,7 @@ const migrationhelper = require('./migrationhelper')
 
 
 async function listAll(){
+    const employees = await Employee.findAll()
     for(const emp of employees){
         console.log("************************")
         console.log("ID:", emp.id)
@@ -21,13 +22,10 @@ async function createNew(){
     const name = await rl.question('Name:')
     const salary = await rl.question('Hourly salary::')
 
-    // 
-    // let sql = "insert into Employee(name,salary,birthDate) values('"
-    // sql = sql + name + "',"
-    employees.push({
-        name:name,
-        birthDate:'1972-08-03',hourlySalary:   parseInt(salary)
-    })
+    await Employee.create({name:name, 
+        birthDate:'1972-08-03',
+        hourlySalary:   parseInt(salary)})
+
 }
 
 
