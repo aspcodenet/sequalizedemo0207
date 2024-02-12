@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     birthDate: DataTypes.DATE,
     hourlySalary: DataTypes.INTEGER,
-    employedAt: DataTypes.DATE 
+    employedAt: DataTypes.DATE ,
+    phone: DataTypes.STRING(20)
   }, {
     sequelize,
     modelName: 'Employee',
